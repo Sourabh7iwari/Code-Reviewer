@@ -14,20 +14,17 @@ A real-time code review and translation platform that provides actionable insigh
 1. **Install Daytona**: Follow the [Daytona installation guide](https://www.daytona.io/docs/installation/installation/).  
 2. **Create the Workspace**:  
    ```bash  
-   daytona create https://github.com/yourusername/code-review-platform.git 
+   daytona create https://github.com/Sourabh7iwari/Code-Reviewer.git 
    ```  
 
-3. **Launch the Application**: Daytona automates the setup of the development container, ensuring that all dependencies, configurations, and environment variables are in place.  
-   - The application will start running on `localhost:5000`.  
-
-4. **Set Environment Variables**: Add API keys for **Llama3 Groq** and **OpenAI**.  
-   Inside the app's Docker container, create a `.env` file or use the terminal to set the variables:  
+3. **Set Environment Variables**: Add API keys for **Llama3 Groq** and **OpenAI**.  
+   create a `.env` file or use the terminal to set the variables:  
    ```bash
    export GROQ_API_KEY=your_groq_api_key  
    export OPENAI_API_KEY=your_openai_api_key  
    ```  
 
-5. **Run the app**: By following command
+4. **Run the app**: By following command
     ```bash
     python3 app.py
     ```
