@@ -18,11 +18,7 @@ A real-time code review and translation platform that provides actionable insigh
    ```  
 
 3. **Set Environment Variables**: Add API keys for **Llama3 Groq** and **OpenAI**.  
-   create a `.env` file or use the terminal to set the variables:  
-   ```bash
-   export GROQ_API_KEY=your_groq_api_key  
-   export OPENAI_API_KEY=your_openai_api_key  
-   ```  
+   create a `.env` file.
 
 4. **Run the app**: By following command
     ```bash

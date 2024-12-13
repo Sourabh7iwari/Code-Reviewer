@@ -3,16 +3,15 @@ from dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify
 from groq import Groq
 import markdown
-import openai
 
 app = Flask(__name__)
 
 load_dotenv()
 
-openai.api_key = os.environ.get("OPENAI_API_KEY")
 client = Groq(
     api_key=os.environ.get("GROQ_API_KEY"),
 )
+print("API Key:", os.environ.get("GROQ_API_KEY"))
 
 @app.route('/')
 def index():
@@ -75,16 +74,17 @@ def convert_code_to_language(code, source_language, target_language):
         system_message = f"""
 You are a code translator. Convert the following {source_language} code to {target_language} while preserving the code functionality:
 """
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+        response = client.chat.completions.create(
             messages=[
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": f"Convert this {source_language} code to {target_language}:\n{code}"}
-            ]
+            ],
+            model="mixtral-8x7b-32768",
         )
 
-        translated_code = response.choices[0].message['content']
-        return translated_code
+        translated_code = response.choices[0].message.content
+        html_translated_code=markdown.markdown(translated_code)
+        return html_translated_code
     except Exception as e:
         return f"Error: {str(e)}"
 
