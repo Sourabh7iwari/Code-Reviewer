@@ -1,6 +1,3 @@
-
----
-
 # Sample Python/Flask Application  
 
 A real-time code review and translation platform that provides actionable insights, translations, and analytics for developers.
@@ -14,16 +11,19 @@ A real-time code review and translation platform that provides actionable insigh
 1. **Install Daytona**: Follow the [Daytona installation guide](https://www.daytona.io/docs/installation/installation/).  
 2. **Create the Workspace**:  
    ```bash  
-   daytona create https://github.com/Sourabh7iwari/Code-Reviewer.git 
+   daytona create https://github.com/Sourabh7iwari/Code-Reviewer.git
    ```  
 
-3. **Set Environment Variables**: Add API keys for **Llama3 Groq** and **OpenAI**.  
-   create a `.env` file.
+3. **Set Environment Variables**: Add the API key for **Groq**.  
+   Create a `.env` file with the following format:
+   ```bash
+   GROQ_API_KEY=your_groq_api_key
+   ```
 
-4. **Run the app**: By following command
-    ```bash
-    python3 app.py
-    ```
+4. **Run the app**: By following command:
+   ```bash
+   python3 app.py
+   ```
 
 ---
 
@@ -34,8 +34,7 @@ A real-time code review and translation platform that provides actionable insigh
 - **Dark Mode:** Switch between light and dark themes for comfortable viewing.
 
 ## 📦 Technologies Used
-- **Llama3 Groq** for code reviews
-- **OpenAI's ChatGPT-3.5 Turbo** for code translation
+- **Groq** for both code reviews and code translation
 - **Flask** for the backend server
 - **HTML/CSS** and **JavaScript** for the frontend
 ---
@@ -58,8 +57,8 @@ A real-time code review and translation platform that provides actionable insigh
 ### Example screenshots for feedback of code
 ![Getting feedback of code](static/127.0.0.1_5000_.png)
 
-### Example screenshots for translating the code to different language
-![Translating code to other language](static/ss1.png)
+### Example screenshots for translating the code to different languages
+![Translating code to another language](static/ss1.png)
 
 </details>
 
@@ -81,4 +80,5 @@ Daytona's integration makes the development process for this code review platfor
 
 - **Daytona Documentation**: [https://www.daytona.io/docs](https://www.daytona.io/docs)  
 - **Python Flask Framework**: [https://flask.palletsprojects.com/](https://flask.palletsprojects.com/)  
-- **OpenAI API**: [https://openai.com/api](https://openai.com/api)  
+- **Groq API**: [https://groq.com/api](https://groq.com/api)  
+
