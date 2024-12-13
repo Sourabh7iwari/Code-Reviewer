@@ -1,10 +1,13 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify
 from groq import Groq
 import markdown
 import openai
 
 app = Flask(__name__)
+
+load_dotenv()
 
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 client = Groq(
